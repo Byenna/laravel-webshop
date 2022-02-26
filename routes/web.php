@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,10 @@ Route::get('/about', function () {
 });
 Route::get('/contact', [ContactController::class, 'index']);
 
+//front_products routes
+Route::get('/front_products', [ProductController::class, 'index']);
+
+//backend routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

@@ -60,35 +60,39 @@
             </div> 
         </nav>
 
-        <div class="sidenav">
-            <div id="homeNav">
-
-                <div class="sideBtn"><a href="/coffeeMachines.html" class="btn btn-primary">Coffee Machines</a></div>
-
-                <div class="sideBtn"><a href="/coffeeBeans.html" class="btn btn-primary">Coffee Beans</a></div>
-
-                <div class="sideBtn"><a href="/coffeeCups.html" class="btn btn-primary">Coffee Cups</a></div>
-
-
-                <div class="sideBtn"> <a href="/signIn.html" class="btn btn-primary">LOG IN</a></div>
-
-                <div class="sideBtn"><button class="btn btn-primary" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">More Information &#9662;
-                    </button>
-
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#footer" style="color:#cad2c5"> Contact us</a></li>
-                        <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Coffeemaker"
-                                style="color:#cad2c5">About</a></li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-        <img id="homeImg" src="/assets/images/coffeeGif1.gif" alt="animated coffee cup">
     </div>
+
+
+
+    
+        <!-- <nav class="sticky-top"> -->
+        <div class="container-fluid" class="navlinks">
+           
+            <!-- shoppingcart -->
+             <!-- end shoppingcart -->
+
+
+            <select @change="filterBean()" v-model="bean_filter" class="btn btn-primary">
+                <option selected value="all">All</option>
+                <option value="dark">Dark</option>
+                <option value="medium">Medium</option>
+                <option value="blond">blond</option>
+            </select>
+
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">Other Products &#9662;
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="/coffeeMachines.html" style="color:#cad2c5">Coffee Machines</a></li>
+                <li><a class="dropdown-item" href="/coffeeCups.html" style="color:#cad2c5">Coffee Cups</a></li>
+            </ul>
+
+            <a href="/index.html" class="btn btn-primary">Home</a>
+
+        </div>
+    
+
+
 
         <footer class="block d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
                 <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>
