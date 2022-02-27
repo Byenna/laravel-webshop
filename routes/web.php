@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FrontProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,9 @@ Route::get('/about', function () {
 Route::get('/contact', [ContactController::class, 'index']);
 
 //front_products routes
-Route::get('/front_products', [ProductController::class, 'index']);
+Route::get('/front_products/machines', [FrontProductsController::class, 'machines'])->name('machines');
+Route::get('/front_products/beans', [FrontProductsController::class, 'beans'])->name('beans');
+Route::get('/front_products/cups', [FrontProductsController::class, 'cups'])->name('cups');
 
 //backend routes
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
