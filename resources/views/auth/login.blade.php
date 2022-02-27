@@ -1,48 +1,46 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <x-jet-validation-errors class="mb-4" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-        <form method="POST" action="{{ route('login') }}">
+    <link rel="stylesheet" href="/assets/css/signIn.css">
+    <title>Log In</title>
+
+<body>
+    <div id="appLog">
+        <div class="form-group">
+        <form id="logIn" class="row g-3" method="POST" action="{{ route('login') }}">
             @csrf
+            
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
 
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" id="inputPassword4" required>
+                </div>
+                <div class="col-12">
+                    <a href="{{ route('password.request') }}">Wachtwoord vergeten?</a>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">SIGN IN</button>
+                </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+            </form>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+        </div>
+    </div>
+    <script src="/assets/js/logIn.js"></script>
+</body>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+</html>

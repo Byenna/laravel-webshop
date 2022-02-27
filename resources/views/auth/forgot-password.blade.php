@@ -1,34 +1,41 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-        <x-jet-validation-errors class="mb-4" />
+    <link rel="stylesheet" href="/assets/css/signIn.css">
+    <title>Log In</title>
 
-        <form method="POST" action="{{ route('password.email') }}">
+<body>
+    <div id="appLog">
+        <div class="form-group">
+        <form id="logIn" class="row g-3" method="POST" action="{{ route('password.email') }}">
             @csrf
 
-            <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+                <h4>Forgot your password?</h4>
+                <p> No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</p>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">SEND</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    <script src="/assets/js/logIn.js"></script>
+</body>
+
+</html>
