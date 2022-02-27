@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\FrontProductsController;
+use App\Http\Controllers\Frontend\IndexController;
+// use App\Http\Controllers\FrontProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,15 +16,15 @@ use App\Http\Controllers\FrontProductsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/about', function () {
-    return view('about');
-});
+
+//frontend routes
+Route::get('/', [IndexController::class, 'welcome']);
+Route::get('/about', [IndexController::class, 'about']);
+Route::get('/frontend/machines', [IndexController::class, 'machines'])->name('machines');
+Route::get('/frontend/beans', [IndexController::class, 'beans'])->name('beans');
+Route::get('/frontend/cups', [IndexController::class, 'cups'])->name('cups');
+
 Route::get('/contact', [ContactController::class, 'index']);
-
-
 
 
 //backend routes

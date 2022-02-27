@@ -63,19 +63,15 @@
         <div class="sidenav">
             <div id="homeNav">
 
-                <div class="sideBtn"><a href="{{ url('machines') }}" class="btn btn-primary">Coffee Machines</a></div>
+                <div class="sideBtn"><a href="{{ url('frontend/machines') }}" class="btn btn-primary">Coffee Machines</a></div>
 
-                <div class="sideBtn"><a href="{{ url('beans') }}" class="btn btn-primary">Coffee Beans</a></div>
+                <div class="sideBtn"><a href="{{ url('frontend/beans') }}" class="btn btn-primary">Coffee Beans</a></div>
 
-                <div class="sideBtn"><a href="{{ url('cups') }}" class="btn btn-primary">Coffee Cups</a></div>
-
-
-                <div class="sideBtn"> <a href="/signIn.html" class="btn btn-primary">LOG IN</a></div>
+                <div class="sideBtn"><a href="{{ url('frontend/cups') }}" class="btn btn-primary">Coffee Cups</a></div>
 
                 <div class="sideBtn"><button class="btn btn-primary" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">More Information &#9662;
                     </button>
-
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="#footer" style="color:#cad2c5"> Contact us</a></li>
