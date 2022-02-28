@@ -6,13 +6,11 @@
 
         <title>Cherkkoffie</title>
 
-        <!-- bootstrap -->
-        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/css/signIn.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/signIn.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,56 +25,40 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+       
     </head>
-    <body class="antialiased">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+@include('frontend.templates.header')
+@yield('category_machines')
+@yield('category_beans')
+@yield('category_cups')
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+@yield('side_nav_machines')
+@yield('side_nav_beans')
+@yield('side_nav_cups')
 
-          
- 
-
-
-    <div class="container-fluid">
-
-               
-
-        <nav id="app" class="container-fluid" class="navlinks">
-           
-        </nav>
-        </div>
-
-        <!-- <div class="container-fluid">
-
-               
+@yield('side_nav_home')
+@yield('forgot_password')
+@yield('login')
+@yield('register')
+@section('test')
+        <div class="container-fluid">
+    
 
         <na id="app" class="container-fluid" class="navlinks">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:pt-0">
-                    <h><a href="{{ url('/') }}">Home</a> |</h2>
-                    <h2><a href="{{ URL::to('/about') }}">About</a> |  </h2>  
-                    <h2><a href="{{ URL::to('/contact') }}">Contact</a> |</h2>
                     <h2><a href="{{ url('/') }}">Home</a> |</h2>
                     <h2><a href="{{ URL::to('/about') }}">About</a> |  </h2>  
                     <h2><a href="{{ URL::to('/contact') }}">Contact</a> |</h2>
                 </div>
             </div> 
         </nav>
-        </div> -->
+        </div>
+@endsection
 
 
  
-
+@section('test2')
 <div class="block">
 
         <div class="sidenav">
@@ -109,21 +91,12 @@
     </div>
 
  </div>
+ @endsection
 
-        <footer id="footer" class="footer">
-                <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>
-                <ul class="nav col-md-4 justify-content-end">
-                
-                <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a>
-                </li>
-                <li><a href="https://www.twitter.com/" class="fa fa-twitter"></a>
-                </li>
-                <li><a href="https://www.instagram.com/" class=" fa fa-instagram"></a>
-                </li>
-            </ul>
-        </footer>
-        <script src="{{ asset('/js/app.js') }}"></script>
-        <script src="{{ asset('/js/script.js') }}"></script>
+  @include('frontend.templates.footer')
+  <script src="{{ asset('/js/app.js') }}"></script>
+  
+        
         
     </body>
 </html>

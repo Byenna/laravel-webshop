@@ -18,7 +18,7 @@ body {
     background-color: rgb(65, 37, 2);
     border-color: #656d4a;
     border-radius: 10px;
-    margin-left: 0.5rem;
+    margin: 0.5rem;
     transition: background-color 200ms ease-in-out;
 
 }
@@ -34,6 +34,7 @@ body {
 
 .form-group {
     padding: 18rem;
+
 
 }
 

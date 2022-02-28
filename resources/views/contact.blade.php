@@ -4,15 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Contact</title>
+        <title>Cherkkoffie</title>
 
+        <!-- bootstrap -->
+        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
         <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
         <link rel="stylesheet" href="{{ asset('assets/css/signIn.css')}}">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- bootstrap -->
-        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -43,35 +44,51 @@
             @endif
 
           
-            
-        
+ 
 
-        <div class="block">
+
+    <div class="container-fluid">
 
                
 
         <nav id="app" class="container-fluid" class="navlinks">
+           
+        </nav>
+        </div>
+
+        <!-- <div class="container-fluid">
+
+               
+
+        <na id="app" class="container-fluid" class="navlinks">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:pt-0">
+                    <h><a href="{{ url('/') }}">Home</a> |</h2>
+                    <h2><a href="{{ URL::to('/about') }}">About</a> |  </h2>  
+                    <h2><a href="{{ URL::to('/contact') }}">Contact</a> |</h2>
                     <h2><a href="{{ url('/') }}">Home</a> |</h2>
                     <h2><a href="{{ URL::to('/about') }}">About</a> |  </h2>  
                     <h2><a href="{{ URL::to('/contact') }}">Contact</a> |</h2>
                 </div>
             </div> 
         </nav>
+        </div> -->
+
+
+ 
+
+<div class="block">
 
         <div class="sidenav">
             <div id="homeNav">
 
-                <div class="sideBtn"><a href="/coffeeMachines.html" class="btn btn-primary">Coffee Machines</a></div>
+                <div class="sideBtn"><a href="{{ url('frontend/machines') }}" class="btn btn-primary">Coffee Machines</a></div>
 
-                <div class="sideBtn"><a href="/coffeeBeans.html" class="btn btn-primary">Coffee Beans</a></div>
+                <div class="sideBtn"><a href="{{ url('frontend/beans') }}" class="btn btn-primary">Coffee Beans</a></div>
 
-                <div class="sideBtn"><a href="/coffeeCups.html" class="btn btn-primary">Coffee Cups</a></div>
+                <div class="sideBtn"><a href="{{ url('frontend/cups') }}" class="btn btn-primary">Coffee Cups</a></div>
 
-
-                <div class="sideBtn"> <a href="/signIn.html" class="btn btn-primary">LOG IN</a></div>
-
+                <div class="sideBtn"><a href="{{ url('frontend/cups') }}" class="btn btn-primary">Meer informatie</a></div>
                 <div class="sideBtn"><button class="btn btn-primary" type="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">More Information &#9662;
                     </button>
@@ -86,12 +103,15 @@
                 </div>
             </div>
         </div>
-
+    
+    <div class="container-fluid">
         <img id="homeImg" src="/assets/images/coffeeGif1.gif" alt="animated coffee cup">
     </div>
 
-        <footer class="block d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
-                <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>
+ </div>
+
+        <footer id="footer" class="footer">
+                <p class="col-md-4 mb-0 text-muted">&copy; 2022 Cherkkoffie</p>
                 <ul class="nav col-md-4 justify-content-end">
                 
                 <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a>
@@ -104,5 +124,6 @@
         </footer>
         <script src="{{ asset('/js/app.js') }}"></script>
         <script src="{{ asset('/js/script.js') }}"></script>
+        
     </body>
 </html>
