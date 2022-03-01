@@ -5,7 +5,7 @@
 
         <div class="sidenav">
             <div id="homeNav">
-
+<h1 class="test" >hello</h1>
                 <div class="sideBtn"><a href="{{ url('frontend/machines') }}" class="btn btn-primary">Coffee Machines</a></div>
 
                 <div class="sideBtn"><a href="{{ url('frontend/beans') }}" class="btn btn-primary">Coffee Beans</a></div>
